@@ -1,0 +1,24 @@
+.log-btn:hover {
+  background-color: #026eb6 !important;
+  transition: background-color .2s ease;
+}
+#message-header::-webkit-scrollbar {
+  width: 10px;
+}
+#message-header::-webkit-scrollbar-thumb {
+  background: #adb5bd;
+  border-radius: 10px;
+}
+#search-input-header-react::-webkit-scrollbar {
+  width: 10px;
+}
+#search-input-header-react::-webkit-scrollbar-thumb {
+  background: #adb5bd;
+  border-radius: 10px;
+}
+#quick-page-links a {
+  text-decoration: none !important;
+}
+html[data-bs-theme='dark'] header {
+  background-color: #111C2D !important;
+}

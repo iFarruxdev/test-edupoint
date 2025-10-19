@@ -1,0 +1,6 @@
+#sidebarnav {
+  padding-left: 0px;
+}
+html[data-bs-theme='dark'] #aside-menu-toggle {
+  background-color: #111C2D;
+}
