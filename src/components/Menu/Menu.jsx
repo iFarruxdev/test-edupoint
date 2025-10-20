@@ -33,7 +33,7 @@ const Menu = ({toggleTheme , togglebar , setMedia}) => {
           href="#"
           className="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none"
         >
-          <IconX onClick={() => setMedia(false)} color="#111C2D" size={20} />
+          <IconX className="menu-xmark" onClick={() => setMedia(false)} size={20} />
         </a>
       </div>
 

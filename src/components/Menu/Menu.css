@@ -27,4 +27,10 @@ body[data-sidebartype='mini-sidebar'] #aside-menu-toggle {
   #aside-menu-toggle {
     z-index: 23123 !important;
   }
+  .menu-xmark {
+    color: #111C2D;
+  }
+  html[data-bs-theme='dark'] .menu-xmark {
+    color: #fff;
+  }
 }
