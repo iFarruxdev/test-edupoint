@@ -6,14 +6,17 @@ import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
   let [toggleTheme , setToggleTheme] = useState(true);
+  let [togglebar , setTogglebar] = useState(true);
+  let [showbar , setShowbar] = useState(false);
 
   return (
-    <div className="site-layout">
+    <div id='main-wrapper' className={`site-layout`}>
       <aside className="index-menu">
-        <Menu toggleTheme={toggleTheme} />
+        <Menu toggleTheme={toggleTheme} togglebar={togglebar} />
       </aside>
       <main className="layout-content">
-        <Header toggleTheme={toggleTheme} setToggleTheme={setToggleTheme} />
+        <Header toggleTheme={toggleTheme} setToggleTheme={setToggleTheme}
+        setTogglebar={setTogglebar} setShowbar={setShowbar} />
         <Outlet />
       </main>
     </div>

@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import { IconDots } from '@tabler/icons-react';
 import { IconAlignJustified } from '@tabler/icons-react';
 
-const Header = ({toggleTheme , setToggleTheme}) => {
+const Header = ({toggleTheme , setToggleTheme , setTogglebar , setShowbar}) => {
 
   let handleToggle = () => {
     let html = document.documentElement;
@@ -14,6 +14,22 @@ const Header = ({toggleTheme , setToggleTheme}) => {
       html.setAttribute('data-bs-theme',"light")
     }
   }
+  let handleBar = () => {
+    let body = document.body;
+
+    setTogglebar((prev) => {
+      let newValue = !prev;
+
+      if (newValue) {
+        body.setAttribute('data-sidebartype', 'full');
+      } else {
+        body.setAttribute('data-sidebartype', 'mini-sidebar');
+        setShowbar(true);
+      }
+
+      return newValue;
+    });
+  };
   return (
     <header className="topbar sticky-top">
       <div className="with-vertical">
@@ -24,6 +40,7 @@ const Header = ({toggleTheme , setToggleTheme}) => {
                 className="nav-link sidebartoggler"
                 id="headerCollapse"
                 href="javascript:void(0)"
+                onClick={handleBar}
               >
                 <Icon icon="solar:list-bold-duotone" className="fs-7" />
               </a>

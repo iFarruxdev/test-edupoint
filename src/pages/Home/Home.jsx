@@ -485,7 +485,7 @@ const Home = () => {
                                         <img src="/product-9.png"
                                             className="img-fluid flex-shrink-0" width="50" height="50" />
                                         <div className="ms-3 product-title">
-                                            <h6 style={{fontSize:'16px',fontWeight:600}} className="mb-0 text-truncate-2 index-item-title">Sony X85J 75 Inch Sony 4K
+                                            <h6 style={{fontSize:'16px'}} className="mb-0 text-truncate-2 index-item-title">Sony X85J 75 Inch Sony 4K
                                                 Ultra HD LED Smart G...
                                             </h6>
                                         </div>

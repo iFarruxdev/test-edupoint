@@ -4,3 +4,25 @@
 html[data-bs-theme='dark'] #aside-menu-toggle {
   background-color: #111C2D;
 }
+#aside-menu-toggle {
+  height: 820px;
+  transition: all .2s ease;
+}
+body[data-sidebartype='mini-sidebar'] #aside-menu-toggle {
+  width: 70px;
+  transition: width .2s ease;
+}
+.index-mini-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+@media (max-width: 1299.9px) {
+  html[data-bs-theme='dark'] .dark-logo {
+    display: none !important;
+  }
+  html[data-bs-theme='dark'] .light-logo {
+    display: block !important;
+  }
+}

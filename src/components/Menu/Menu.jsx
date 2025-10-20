@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import "./Menu.css";
 import { useState } from "react";
 
-const Menu = ({toggleTheme}) => {
+const Menu = ({toggleTheme , togglebar}) => {
   const [teachersOpen, setTeachersOpen] = useState(false);
   const [exam, setExam] = useState(false);
   const [student, setStudent] = useState(false);
@@ -12,7 +12,7 @@ const Menu = ({toggleTheme}) => {
     <aside id="aside-menu-toggle" className="left-sidebar with-vertical">
       <div className="brand-logo d-flex align-items-center justify-content-between">
         <Link className="text-nowrap logo-img" to="/">
-          {toggleTheme ? <img
+          {togglebar ? toggleTheme ? <img
             src="/logo-light.svg"
             className="dark-logo"
             alt="Logo-Dark"
@@ -22,7 +22,11 @@ const Menu = ({toggleTheme}) => {
           className="light-logo"
           alt="Logo-light"
           style={{ display: "flex" }}
-        />}
+        /> : <img   src="/favicon.png"
+        className="index-mini-logo"
+        alt="Logo-light"
+        width={40} height={40}
+        style={{ display: "flex" }} />}
         </Link>
         <a
           href="#"
@@ -50,7 +54,7 @@ const Menu = ({toggleTheme}) => {
                         icon="solar:menu-dots-bold-duotone"
                         className="nav-small-cap-icon fs-5"
                       />
-                      <span className="hide-menu">Bosh sahifa</span>
+                      {togglebar ? <span className="hide-menu">Bosh sahifa</span> : <Icon icon="mdi:dots-horizontal" width="28" height="28" style={{marginLeft:'3px' , cursor:'pointer', color:'#808090'}} />}
                     </li>
 
                     <li className="sidebar-item">
@@ -58,7 +62,7 @@ const Menu = ({toggleTheme}) => {
                         <span className="aside-icon p-2 bg-primary-subtle rounded-1">
                           <Icon icon="solar:screencast-2-line-duotone" className="fs-5" />
                         </span>
-                        <span className="hide-menu ps-1">Boshqaruv paneli</span>
+                        {togglebar ? <span className="hide-menu ps-1">Boshqaruv paneli</span> : ''}
                       </NavLink>
                     </li>
 
@@ -67,7 +71,7 @@ const Menu = ({toggleTheme}) => {
                         <span className="aside-icon p-2 bg-info-subtle rounded-1">
                           <Icon icon="solar:user-circle-line-duotone" className="fs-5" />
                         </span>
-                        <span className="hide-menu ps-1">Hisob</span>
+                       {togglebar ? <span className="hide-menu ps-1">Hisob</span> : ''}
                       </NavLink>
                     </li>
 
@@ -76,7 +80,7 @@ const Menu = ({toggleTheme}) => {
                         <span className="aside-icon p-2 bg-info-subtle rounded-1">
                           <Icon icon="solar:calendar-add-line-duotone" className="fs-5" />
                         </span>
-                        <span className="hide-menu ps-1">Kalendar</span>
+                        {togglebar ? <span className="hide-menu ps-1">Kalendar</span> : ''}
                       </NavLink>
                     </li>
 
@@ -85,7 +89,7 @@ const Menu = ({toggleTheme}) => {
                         <span className="aside-icon p-2 bg-success-subtle rounded-1">
                           <Icon icon="solar:window-frame-line-duotone" className="fs-5" />
                         </span>
-                        <span className="hide-menu ps-1">Kanban</span>
+                        {togglebar ? <span className="hide-menu ps-1">Kanban</span> : ''}
                       </NavLink>
                     </li>
 
@@ -94,7 +98,7 @@ const Menu = ({toggleTheme}) => {
                         <span className="aside-icon p-2 bg-secondary-subtle rounded-1">
                           <Icon icon="solar:notification-unread-lines-line-duotone" className="fs-5" />
                         </span>
-                        <span className="hide-menu ps-1">Izohlar</span>
+                        {togglebar ? <span className="hide-menu ps-1">Izohlar</span> : ''}
                       </NavLink>
                     </li>
 
@@ -103,7 +107,7 @@ const Menu = ({toggleTheme}) => {
                         icon="solar:menu-dots-bold-duotone"
                         className="nav-small-cap-icon fs-5"
                       />
-                      <span className="hide-menu">Maktab sahifalari</span>
+                      {togglebar ? <span className="hide-menu">Maktab sahifalari</span> : <Icon icon="mdi:dots-horizontal" width="28" height="28" style={{marginLeft:'3px' , cursor:'pointer' , color:'#808090'}} />}
                     </li>
 
                     <li className="sidebar-item">
@@ -112,14 +116,14 @@ const Menu = ({toggleTheme}) => {
                           e.preventDefault();
                           setTeachersOpen(!teachersOpen);
                         }}
-                        className="sidebar-link has-arrow success-hover-bg d-flex align-items-center"
+                        className={`sidebar-link ${togglebar ? 'has-arrow' : ""} success-hover-bg d-flex align-items-cente`}
                         href="#"
                         aria-expanded={teachersOpen}
                       >
                         <span className="aside-icon p-2 bg-success-subtle rounded-1">
                           <Icon icon="solar:lightbulb-bolt-line-duotone" className="fs-5" />
                         </span>
-                        <span className="hide-menu ps-1">Ustozlar</span>
+                        {togglebar ? <span className="hide-menu ps-1">Ustozlar</span> : ''}
                       </a>
 
                       {teachersOpen && (
@@ -142,11 +146,11 @@ const Menu = ({toggleTheme}) => {
                       <a onClick={(e) => {
                         e.preventDefault();
                         setExam(!exam)
-                      }} className="sidebar-link has-arrow warning-hover-bg" href="#" aria-expanded={exam}>
+                      }} className={`sidebar-link warning-hover-bg ${togglebar ? 'has-arrow' : ""}`} href="#" aria-expanded={exam}>
                         <span className="aside-icon p-2 bg-warning-subtle rounded-1">
                           <Icon icon="solar:file-text-line-duotone" className="fs-5" />
                         </span>
-                        <span className="hide-menu ps-1">Imtihon</span>
+                        {togglebar ? <span className="hide-menu ps-1">Imtihon</span> : ''}
                       </a>
 
                       {exam && <ul className="first-level">
@@ -172,11 +176,11 @@ const Menu = ({toggleTheme}) => {
                       <a onClick={(e) => {
                         e.preventDefault();
                         setStudent(!student)
-                      }} className="sidebar-link has-arrow danger-hover-bg" href="#" aria-expanded={student}>
+                      }} className={`sidebar-link ${togglebar ? 'has-arrow' : ""} danger-hover-bg`} href="#" aria-expanded={student}>
                         <span className="aside-icon p-2 bg-danger-subtle rounded-1">
                           <Icon icon="solar:square-academic-cap-line-duotone" className="fs-5" />
                         </span>
-                        <span className="hide-menu ps-1">Talabalar</span>
+                        {togglebar ? <span className="hide-menu ps-1">Talabalar</span> : ""}
                       </a>
                       {student && <ul className="first-level">
                         <li className="sidebar-item">
@@ -197,7 +201,7 @@ const Menu = ({toggleTheme}) => {
                         <span className="aside-icon p-2 bg-indigo-subtle rounded-1">
                           <Icon icon="solar:planet-3-line-duotone" className="fs-5" />
                         </span>
-                        <span className="hide-menu ps-1">Darslar</span>
+                        {togglebar ? <span className="hide-menu ps-1">Darslar</span> : ''}
                       </NavLink>
                     </li>
 
@@ -206,7 +210,7 @@ const Menu = ({toggleTheme}) => {
                         <span className="aside-icon p-2 bg-info-subtle rounded-1">
                           <Icon icon="solar:file-check-line-duotone" className="fs-5" />
                         </span>
-                        <span className="hide-menu ps-1">Davomat</span>
+                        {togglebar ? <span className="hide-menu ps-1">Davomat</span> : ''}
                       </NavLink>
                     </li>
                   </ul>
@@ -217,7 +221,7 @@ const Menu = ({toggleTheme}) => {
         </div>
       </div>
 
-      <div className="fixed-profile mx-3 mt-3">
+      {togglebar && <div className="fixed-profile mx-3 mt-3">
         <div className="card bg-primary-subtle mb-0 shadow-none">
           <div className="card-body p-4">
             <div className="d-flex align-items-center justify-content-between gap-3">
@@ -246,7 +250,7 @@ const Menu = ({toggleTheme}) => {
             </div>
           </div>
         </div>
-      </div>
+      </div>}
     </aside>
   );
 };

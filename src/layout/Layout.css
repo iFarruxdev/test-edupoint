@@ -9,8 +9,13 @@
   padding-left: 270px;
 }
 
+body[data-sidebartype='mini-sidebar'] .layout-content {
+  padding-left: 70px;
+  transition: padding-left .2s ease;
+}
+
 @media (max-width:1299.9px) {
   .layout-content {
-    padding-left: 0;
+    padding-left: 0 !important;
   }
 }
