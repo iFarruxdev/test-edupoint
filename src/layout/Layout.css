@@ -18,4 +18,11 @@ body[data-sidebartype='mini-sidebar'] .layout-content {
   .layout-content {
     padding-left: 0 !important;
   }
+  .show-sidebar {
+    z-index: 123456 !important;
+  }
+  /* .show-sidebar #aside-menu-toggle {
+    width: 270px !important;
+    transition: width .2s ease;
+  } */
 }

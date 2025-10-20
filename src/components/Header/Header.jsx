@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import { IconDots } from '@tabler/icons-react';
 import { IconAlignJustified } from '@tabler/icons-react';
 
-const Header = ({toggleTheme , setToggleTheme , setTogglebar , setShowbar}) => {
+const Header = ({toggleTheme , setToggleTheme , setTogglebar , setShowbar , setMedia}) => {
 
   let handleToggle = () => {
     let html = document.documentElement;
@@ -30,6 +30,10 @@ const Header = ({toggleTheme , setToggleTheme , setTogglebar , setShowbar}) => {
       return newValue;
     });
   };
+  let HandleMedia = () => {
+    document.body.setAttribute('data-sidebartype', 'full');
+    setTogglebar(true);
+  }
   return (
     <header className="topbar sticky-top">
       <div className="with-vertical">
@@ -95,12 +99,12 @@ const Header = ({toggleTheme , setToggleTheme , setTogglebar , setShowbar}) => {
               <a
                 href="javascript:void(0)"
                 className="nav-link d-flex d-lg-none align-items-center justify-content-center"
-                type="button"
+                type="button" onClick={() => setMedia(true)}
                 data-bs-toggle="offcanvas"
                 data-bs-target="#mobilenavbar"
                 aria-controls="offcanvasWithBothOptions"
               >
-                <div className="nav-icon-hover-bg rounded-circle ">
+                <div onClick={HandleMedia} className="nav-icon-hover-bg rounded-circle">
                   <IconAlignJustified size={20} className="fs-7" />
                 </div>
               </a>

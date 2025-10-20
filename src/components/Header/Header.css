@@ -1,3 +1,6 @@
+header {
+  z-index: 12;
+}
 .log-btn:hover {
   background-color: #026eb6 !important;
   transition: background-color .2s ease;

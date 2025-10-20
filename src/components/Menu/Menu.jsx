@@ -1,9 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import { IconX } from "@tabler/icons-react";
 import "./Menu.css";
 import { useState } from "react";
 
-const Menu = ({toggleTheme , togglebar}) => {
+const Menu = ({toggleTheme , togglebar , setMedia}) => {
   const [teachersOpen, setTeachersOpen] = useState(false);
   const [exam, setExam] = useState(false);
   const [student, setStudent] = useState(false);
@@ -32,7 +33,7 @@ const Menu = ({toggleTheme , togglebar}) => {
           href="#"
           className="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none"
         >
-          <i className="ti ti-x"></i>
+          <IconX onClick={() => setMedia(false)} color="#111C2D" size={20} />
         </a>
       </div>
 

@@ -5,7 +5,6 @@ html[data-bs-theme='dark'] #aside-menu-toggle {
   background-color: #111C2D;
 }
 #aside-menu-toggle {
-  height: 820px;
   transition: all .2s ease;
 }
 body[data-sidebartype='mini-sidebar'] #aside-menu-toggle {
@@ -24,5 +23,8 @@ body[data-sidebartype='mini-sidebar'] #aside-menu-toggle {
   }
   html[data-bs-theme='dark'] .light-logo {
     display: block !important;
+  }
+  #aside-menu-toggle {
+    z-index: 23123 !important;
   }
 }
