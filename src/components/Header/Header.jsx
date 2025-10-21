@@ -651,8 +651,8 @@ const Header = ({toggleTheme , setToggleTheme , setTogglebar , setShowbar , setM
                       </div>
 
                       <div className="message-body">
-                        <a
-                          href="../main/page-user-profile.html"
+                        <NavLink
+                          to='/profile'
                           className="dropdown-item px-4 d-flex align-items-center py-3"
                         >
                           <span className="btn px-2 py-1 bg-info-subtle rounded-1 text-info shadow-none">
@@ -661,15 +661,15 @@ const Header = ({toggleTheme , setToggleTheme , setTogglebar , setShowbar , setM
                               className="fs-7"
                             />
                           </span>
-                          <NavLink to='/profile' className="w-100 ps-3 ms- header-socials-link">
+                          <div className="w-100 ps-3 ms- header-socials-link">
                             <h5 style={{fontSize:'17.5px'}} className="mb-0 mt-1 fw-medium">
                               Mening profilim
                             </h5>
                             <span style={{fontSize:'15.2px',marginTop:'2px',color:'#AAAFB4'}} className="d-block">
                               Hisob sozlamalari
                             </span>
-                          </NavLink>
-                        </a>
+                          </div>
+                        </NavLink>
 
                         <a
                           href="../main/app-email.html"
