@@ -2,6 +2,7 @@ import "./Header.css";
 import { Icon } from "@iconify/react";
 import { IconDots } from '@tabler/icons-react';
 import { IconAlignJustified } from '@tabler/icons-react';
+import { NavLink } from "react-router-dom";
 
 const Header = ({toggleTheme , setToggleTheme , setTogglebar , setShowbar , setMedia}) => {
 
@@ -660,14 +661,14 @@ const Header = ({toggleTheme , setToggleTheme , setTogglebar , setShowbar , setM
                               className="fs-7"
                             />
                           </span>
-                          <div className="w-100 ps-3 ms-1">
+                          <NavLink to='/profile' className="w-100 ps-3 ms-1">
                             <h5 style={{fontSize:'17.5px'}} className="mb-0 mt-1 fw-medium">
                               Mening profilim
                             </h5>
                             <span style={{fontSize:'15.2px',marginTop:'2px',color:'#AAAFB4'}} className="d-block">
                               Hisob sozlamalari
                             </span>
-                          </div>
+                          </NavLink>
                         </a>
 
                         <a

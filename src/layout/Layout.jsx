@@ -1,14 +1,29 @@
 import Header from '../components/Header/Header'
 import Menu from '../components/Menu/Menu'
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 import './Layout.css'
 import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
-  let [toggleTheme , setToggleTheme] = useState(true);
+  let [toggleTheme , setToggleTheme] = useState(() => {
+    let saved = localStorage.getItem("theme");
+    return saved ? JSON.parse(saved) : true;
+  });
+
   let [togglebar , setTogglebar] = useState(true);
   let [showbar , setShowbar] = useState(false);
   let [media , setMedia] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(toggleTheme));
+
+    let html = document.documentElement;
+    if (toggleTheme) {
+      html.setAttribute("data-bs-theme", "light");
+    } else {
+      html.setAttribute("data-bs-theme", "dark");
+    }
+  }, [toggleTheme]);
 
   return (
     <div id='main-wrapper' className={`site-layout ${media ? "show-sidebar" : ""}`}>
