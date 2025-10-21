@@ -10,7 +10,11 @@ const Layout = () => {
     return saved ? JSON.parse(saved) : true;
   });
 
-  let [togglebar , setTogglebar] = useState(true);
+  let [togglebar , setTogglebar] = useState(() => {
+    let saved = localStorage.getItem("sidebar");
+    return saved ? JSON.parse(saved) : true;
+  });
+
   let [showbar , setShowbar] = useState(false);
   let [media , setMedia] = useState(false);
 
@@ -24,6 +28,18 @@ const Layout = () => {
       html.setAttribute("data-bs-theme", "dark");
     }
   }, [toggleTheme]);
+
+  useEffect(() => {
+    localStorage.setItem("sidebar", JSON.stringify(togglebar));
+
+    let body = document.body;
+    if (togglebar) {
+      body.removeAttribute("data-sidebartype");
+    } else {
+      body.setAttribute("data-sidebartype", "mini-sidebar");
+    }
+  }, [togglebar]);
+
 
   return (
     <div id='main-wrapper' className={`site-layout ${media ? "show-sidebar" : ""}`}>
