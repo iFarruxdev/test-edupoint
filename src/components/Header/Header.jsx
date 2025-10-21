@@ -661,7 +661,7 @@ const Header = ({toggleTheme , setToggleTheme , setTogglebar , setShowbar , setM
                               className="fs-7"
                             />
                           </span>
-                          <NavLink to='/profile' className="w-100 ps-3 ms-1">
+                          <NavLink to='/profile' className="w-100 ps-3 ms- header-socials-link">
                             <h5 style={{fontSize:'17.5px'}} className="mb-0 mt-1 fw-medium">
                               Mening profilim
                             </h5>

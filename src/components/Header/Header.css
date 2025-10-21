@@ -25,3 +25,12 @@ header {
 html[data-bs-theme='dark'] header {
   background-color: #111C2D !important;
 }
+.header-socials-link {
+  text-decoration: none;
+}
+.header-socials-link h5 {
+  color: #fff;
+}
+html[data-bs-theme='light'] .header-socials-link h5 {
+  color: #212529;
+}
